@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" class="hrm"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <title>HRM System</title>
+        
+        
+                
+        <link rel="shortcut icon" href="./login_files/logo1.png">
+        
+        <!-- Library CSS files -->
+        <link href="./login_files/reset.css" rel="stylesheet" type="text/css">
+        <link href="./login_files/tipTip.css" rel="stylesheet" type="text/css">
+        <link href="./login_files/jquery-ui-1.8.21.custom.css" rel="stylesheet" type="text/css">
+        <link href="./login_files/jquery.autocomplete.css" rel="stylesheet" type="text/css">
+        
+        <!-- Custom CSS files -->
+        <link href="./login_files/main.css" rel="stylesheet" type="text/css">
+        
+        <script type="text/javascript" src="./login_files/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="./login_files/jquery.validate.js"></script>
+<script type="text/javascript" src="./login_files/jquery.ui.core.js"></script>
+<script type="text/javascript" src="./login_files/jquery.autocomplete.js"></script>
+<script type="text/javascript" src="./login_files/hrm.autocomplete.js"></script>
+<script type="text/javascript" src="./login_files/jquery.ui.datepicker.js"></script>
+<script type="text/javascript" src="./login_files/jquery.form.js"></script>
+<script type="text/javascript" src="./login_files/jquery.tipTip.minified.js"></script>
+<script type="text/javascript" src="./login_files/bootstrap-modal.js"></script>
+<script type="text/javascript" src="./login_files/jquery.clickoutside.js"></script>
+<script type="text/javascript" src="./login_files/hrm.validate.js"></script>
+<script type="text/javascript" src="./login_files/archive.js"></script>
+<script type="text/javascript" src="./login_files/hrm.marketplace.js"></script>
+   
+        
+        <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->        
+
+
+
+    </head>
+    <body data-gr-c-s-loaded="true">
+      
+        <div id="wrapper">
+            
+            <div id="content">
+
+                  <style type="text/css">
+
+    body {
+        background-color: ;
+        height: 700px;
+    }
+
+    img {
+        border: none;
+    }
+    #btnLogin {
+        padding: 0;
+    }
+    input:not([type="image"]) {
+        background-color: transparent;
+        border: none;
+    }
+
+    input:focus, select:focus, textarea:focus {
+        background-color: transparent;
+        border: none;
+    }
+
+    .textInputContainer {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 11px;
+        color: #666666;
+    }
+
+    #divLogin {
+        background: transparent url(/webres_5ca6658021cd89.53008077/themes/default/images/login/login.png) no-repeat center top;
+        height: 520px;
+        width: 100%;
+        border-style: hidden;
+        margin: auto;
+        padding-left: 10px;
+    }
+
+    #divUsername {
+        padding-top: 153px;
+        padding-left: 50%;
+    }
+
+    #divPassword {
+        padding-top: 35px;
+        padding-left: 50%;
+    }
+
+    #txtUsername {
+        width: 240px;
+        border: 0px;
+        background-color: transparent;
+    }
+
+    #txtPassword {
+        width: 240px;
+        border: 0px;
+        background-color: transparent;
+    }
+
+    #txtUsername, #txtPassword {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 11px;
+        color: #666666;
+        vertical-align: middle;
+        padding-top:0;
+    }
+    
+    #divLoginHelpLink {
+        width: 270px;
+        background-color: transparent;
+        height: 20px;
+        margin-top: 12px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+        margin-left: 50%;
+    }
+
+    #divLoginButton {
+        padding-top: 2px;
+        padding-left: 49.3%;
+        float: left;
+        width: 350px;
+    }
+
+    #btnLogin {
+        background: url(/webres_5ca6658021cd89.53008077/themes/default/images/login/Login_button.png) no-repeat;
+        cursor:pointer;
+        width: 94px;
+        height: 26px;
+        border: none;
+        color:#000000;
+        font-weight: bold;
+        font-size: 13px;
+        background-color: #C0C0C0;
+    }
+
+    #divLink {
+        padding-left: 230px;
+        padding-top: 105px;
+        float: left;
+    }
+
+    #divLogo {
+        padding-left: 30%;
+        padding-top: 70px;
+    }
+
+    #spanMessage {
+        background: transparent url(/webres_5ca6658021cd89.53008077/themes/default/images/login/mark.png) no-repeat;
+        padding-left: 18px; 
+        padding-top: 0px;
+        color: #DD7700;
+        font-weight: bold;
+    }
+    
+    #logInPanelHeading{
+        position:absolute;
+        padding-top:100px;
+		padding-left:49.5%;
+        font-family:sans-serif;
+        font-size: 15px;
+        color: #544B3C;
+        font-weight: bold;
+    }
+    
+    .form-hint {
+    color: #878787;
+    padding: 4px 8px;
+    position: relative;
+    left:-254px;
+}
+
+    .loginSuccessMessage {
+        font-size: 15px;
+        font-weight: bold;
+        padding-left: 55px;
+        width: 100%;
+    }
+    
+</style>
+
+<div>
+    <input type="text" class="loginSuccessMessage" id="loginSuccessMessage" value="" readonly="readonly">
+</div>
+<div style="position: relative; top: 210px; left: 655px; z-index:100;">
+   <!--<span style="color:red; font-weight:bold; z-index:100;">( Username : Admin | Password : admin123 )</span>-->
+</div>
+
+<div id="divLogin">
+    <div id="divLogo">
+        <img src="data:image/png;base64,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">
+    </div>
+
+    <form id="frmLogin" method="post" action="">
+        <input type="hidden" name="actionID">
+        <input type="hidden" name="hdnUserTimeZoneOffset" id="hdnUserTimeZoneOffset" value="5.5">
+        <input name="installation" id="installation" type="hidden" value=""><input type="hidden" name="_csrf_token" value="6f897a861a7ed1ff285f22141bc04ff4" id="csrf_token">        <div id="logInPanelHeading">LOGIN Panel</div>
+
+        <div id="divUsername" class="textInputContainer">
+            <input name="txtUsername" id="txtUsername" type="text">          <span class="form-hint">Username</span> 
+        </div>
+        <div id="divPassword" class="textInputContainer">
+            <input name="txtPassword" id="txtPassword" autocomplete="off" type="password">         <span class="form-hint">Password</span>
+        </div>
+        <div id="divLoginHelpLink"></div>
+        <div id="divLoginButton">
+            <input type="submit" name="Submit" class="button" id="btnLogin" value="LOGIN">
+                    </div>
+    </form>
+
+</div>
+
+<div style="text-align: center">
+    <div style="text-align: center;padding: 10px;">
+    <form id="openIDForm" method="post" action="" style="text-align: center">
+
+        <input type="hidden" name="_csrf_token" value="b3ee8e64987a1fadcae1b67859dc16c7" id="csrf_token">Alternative Login : <select name="openIdProvider" id="openIdProvider">
+<option value="" selected="selected">-- Select --</option>
+<option value="1">Yahoo</option>
+</select>
+            <input type="button" value="Login" name="openIdLogin" id="openIdLogin" disabled="disabled">
+            </form>
+</div>
+
+<style>
+    #openID{
+        text-align: center;
+        padding: 5px;
+        margin-bottom: 5px;
+    }
+    #openIDForm{
+
+    }
+    #openIDForm input {
+        background-color: red;
+    }
+</style>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#openIdLogin').attr("disabled", "disabled");
+        $('#openIdProvider').change(function() {
+            if ($("#openIdProvider option:selected").val() == '') {
+                $('#openIdLogin').attr("disabled", "disabled");
+            } else {
+                $('#openIdLogin').removeAttr('disabled');
+            }
+        });
+        
+        $('#openIdLogin').click(function(){          
+            $('#openIDForm').submit();
+        });
+    });
+</script></div>
+
+<div id="footer">
+    <div>
+    HRM System 1.0<br>
+© 2005 - 2019 <a href="" target="_blank">HRM System 1.0</a>
+    </div>
+    <div id="social-icons">
+        <a href="https://in.linkedin.com/" target="_blank">
+            <img src="./login_files/linkedin.png" alt="LinkedIn"></a>&nbsp;
+        <a href="https://www.facebook.com/" target="_blank">
+            <img src="./login_files/facebook.png" alt="Facebook"></a>&nbsp;
+        <a href="https://twitter.com/" target="_blank">
+            <img src="./login_files/twiter.png" alt="Twitter"></a>&nbsp;
+        <a href="https://www.youtube.com/" target="_blank">
+            <img src="./login_files/youtube.png" alt="Youtube"></a>&nbsp;
+    </div>
+</div>
+
+<script type="text/javascript">
+    
+    function calculateUserTimeZoneOffset() {
+        var myDate = new Date();
+        var offset = (-1) * myDate.getTimezoneOffset() / 60;
+        return offset;
+    }
+            
+    function addHint(inputObject, hintImageURL) {
+        if (inputObject.val() == '') {
+            inputObject.css('background', "url('" + hintImageURL + "') no-repeat 10px 3px");
+        }
+    }
+            
+    function removeHint() {
+       $('.form-hint').css('display', 'none');
+    }
+    
+    function showMessage(message) {
+        if ($('#spanMessage').size() == 0) {
+            $('<span id="spanMessage"></span>').insertAfter('#btnLogin');
+        }
+
+        $('#spanMessage').html(message);
+    }
+    
+    function validateLogin() {
+        var isEmptyPasswordAllowed = false;
+        
+        if ($('#txtUsername').val() == '') {
+            showMessage('Username cannot be empty');
+            return false;
+        }
+        
+        if (!isEmptyPasswordAllowed) {
+            if ($('#txtPassword').val() == '') {
+                showMessage('Password cannot be empty');
+                return false;
+            }
+        }
+        
+        return true;
+    }
+    
+    function refreshSession() {
+        setTimeout(function() {
+            location.reload();
+        }, 20 * 60 * 1000);
+    }
+
+    $(document).ready(function() {
+        if ($('#installation').val())  {
+            var login = $('#installation').val();
+
+            $("#loginSuccessMessage").attr("value", login);
+        }
+
+        refreshSession();
+
+        /*Set a delay to compatible with chrome browser*/
+        setTimeout(checkSavedUsernames,100);
+        
+        $('#txtUsername').focus(function() {
+            removeHint();
+        });
+        
+        $('#txtPassword').focus(function() {
+             removeHint();
+        });
+        
+        $('.form-hint').click(function(){
+            removeHint();
+            $('#txtUsername').focus();
+        });
+        
+        $('#hdnUserTimeZoneOffset').val(calculateUserTimeZoneOffset().toString());
+        
+        $('#frmLogin').submit(validateLogin);
+        
+    });
+
+    function checkSavedUsernames(){
+        if ($('#txtUsername').val() != '') {
+            removeHint();
+        }
+    }
+
+    if (window.top.location.href != location.href) {
+        window.top.location.href = location.href;
+    }
+</script>
+
+            </div> <!-- content -->
+          
+        </div> <!-- wrapper -->
+        
+ 
+        <script type="text/javascript">
+
+            $(document).ready(function() {                            
+                
+                /* Enabling tooltips */
+                $(".tiptip").tipTip();
+
+                /* Toggling header menus */
+                $("#welcome").click(function () {
+                    $("#welcome-menu").slideToggle("fast");
+                    $(this).toggleClass("activated-welcome");
+                    return false;
+                });
+                
+                $("#help").click(function () {
+                    $("#help-menu").slideToggle("fast");
+                    $(this).toggleClass("activated-help");
+                    return false;
+                });
+                
+                $('.panelTrigger').outside('click', function() {
+                    $('.panelContainer').stop(true, true).slideUp('fast');
+                });                
+
+                /* 
+                 * Button hovering effects 
+                 * Note: we are not using pure css using :hover because :hover applies to even disabled elements.
+                 * The pseudo class :enabled is not supported in IE < 9.
+                 */                
+                $(document).on({
+                    mouseenter: function () {
+                        $(this).addClass('hover');                        
+                    },
+                    mouseleave: function () {
+                        $(this).removeClass('hover');                        
+                    }
+
+                }, 'input[type=button], input[type=submit], input[type=reset]'); 
+  
+                /* Fading out main messages */
+                $(document).on({
+                    click: function() {
+                        $(this).parent('div.message').fadeOut("slow");
+                    }
+                }, '.message a.messageCloseButton');                
+
+                /* Toggling search form: Begins */
+                //$(".toggableForm .inner").hide(); // Disabling this makes search forms to be expanded by default.
+
+                $(".toggableForm .toggle").click(function () {
+                    $(".toggableForm .inner").slideToggle('slow', function() {
+                        if($(this).is(':hidden')) {
+                            $('.toggableForm .tiptip').tipTip({content:'Expand for Options'});
+                        } else {
+                            $('.toggableForm .tiptip').tipTip({content:'Hide Options'});
+                        }
+                    });
+                    $(this).toggleClass("activated");
+                });
+                /* Toggling search form: Ends */
+
+                /* Enabling/disabling form fields: Begin */
+                
+                $('form.clickToEditForm input, form.clickToEditForm select, form.clickToEditForm textarea').attr('disabled', 'disabled');
+                $('form.clickToEditForm input.calendar').datepicker('disable');
+                $('form.clickToEditForm input[type=button]').removeAttr('disabled');
+                
+                $('form input.editButton').click(function(){
+                    $('form.clickToEditForm input, form.clickToEditForm select, form.clickToEditForm textarea').removeAttr('disabled');
+                    $('form.clickToEditForm input.calendar').datepicker('enable');
+                });
+                
+                /* Enabling/disabling form fields: End */
+                
+            });
+            
+        </script>        
+
+    
+    
+
+
+<div id="tiptip_holder" style="max-width:200px;"><div id="tiptip_arrow"><div id="tiptip_arrow_inner"></div></div><div id="tiptip_content"></div></div></body></html>
